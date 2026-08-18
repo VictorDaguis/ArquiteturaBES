@@ -1,0 +1,39 @@
+classDiagram
+
+class Cliente {
+    +int id
+    +string nome
+    +string email
+    +string telefone
+    +cadastrar()
+    +consultarAgendamentos()
+}
+
+class Barbeiro {
+    +int id
+    +string nome
+    +string especialidade
+    +definirDisponibilidade()
+}
+
+class Agendamento {
+    +int id
+    +datetime dataHora
+    +string status
+    +criar()
+    +cancelar()
+    +confirmar()
+}
+
+class Usuario {
+    +int id
+    +string email
+    +string senha
+    +login()
+    +logout()
+}
+
+Cliente "1" --> "0..*" Agendamento : possui
+Barbeiro "1" --> "0..*" Agendamento : realiza
+Usuario <|-- Cliente
+Usuario <|-- Barbeiro
