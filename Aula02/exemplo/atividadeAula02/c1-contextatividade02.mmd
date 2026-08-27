@@ -1,0 +1,10 @@
+flowchart LR
+
+Cliente["Cliente<br>agenda e cancela horários"]
+Barbeiro["Barbeiro<br>gerencia seus horários"]
+Sistema["Sistema de Agendamento<br>Gerencia clientes, barbeiros e agendamentos"]
+Email["Serviço de E-mail<br>Envia confirmações e lembretes"]
+
+Cliente -->|agenda e consulta horários| Sistema
+Barbeiro -->|gerencia disponibilidade| Sistema
+Sistema -->|envia confirmação e lembrete| Email
