@@ -1,0 +1,19 @@
+flowchart LR
+
+Cliente["Cliente"]
+Barbeiro["Barbeiro"]
+
+Web["Aplicação Web<br>Interface para clientes e barbeiros"]
+
+API["API do Sistema<br>Processa agendamentos e regras de negócio"]
+
+DB[("Banco de Dados<br>Clientes, barbeiros e agendamentos")]
+
+Email["Serviço de E-mail<br>Envio de confirmações"]
+
+Cliente -->|utiliza| Web
+Barbeiro -->|utiliza| Web
+
+Web -->|requisições HTTP| API
+API -->|consulta e grava dados| DB
+API -->|envia notificações| Email

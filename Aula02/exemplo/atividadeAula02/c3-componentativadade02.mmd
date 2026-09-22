@@ -1,0 +1,31 @@
+flowchart LR
+
+Web["Aplicação Web"]
+
+API["API de Agendamento"]
+
+Auth["Componente de Autenticação"]
+Clientes["Componente de Clientes"]
+Barbeiros["Componente de Barbeiros"]
+Agendamentos["Componente de Agendamentos"]
+Notificacoes["Componente de Notificações"]
+
+DB[("Banco de Dados")]
+Email["Serviço de E-mail"]
+
+Web --> API
+
+API --> Auth
+API --> Clientes
+API --> Barbeiros
+API --> Agendamentos
+
+Agendamentos --> Clientes
+Agendamentos --> Barbeiros
+Agendamentos --> DB
+
+Clientes --> DB
+Barbeiros --> DB
+
+Agendamentos --> Notificacoes
+Notificacoes --> Email
